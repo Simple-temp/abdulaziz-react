@@ -23,7 +23,7 @@ function App() {
           <Routes>
             {/* this is home route a part of main content */}
             <Route path="/" element={<Home/>}/>
-            {/* this is home route a part of main content and the drawer normal user link */}
+            {/* drawer normal user link */}
             <Route path="/cart" element={<Cart/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/signup" element={<Signup/>}/>

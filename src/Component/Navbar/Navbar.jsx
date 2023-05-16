@@ -102,21 +102,6 @@ const Navbar = () => {
                     <ListGroup.Item>
                         <Link to="/" className='text-decoration-none text-secondary coursor-pointer'>Home</Link>
                     </ListGroup.Item>
-                    {/* <ListGroup.Item>
-                        <Link to="/services">Services</Link>
-                    </ListGroup.Item>
-                    <ListGroup.Item>
-                        <Link to="/portfolio">Portfolio</Link>
-                    </ListGroup.Item>
-                    <ListGroup.Item>
-                        <Link to="/skills">Skills</Link>
-                    </ListGroup.Item>
-                    <ListGroup.Item>
-                        <Link to="/blog">Blog</Link>
-                    </ListGroup.Item>
-                    <ListGroup.Item>
-                        <Link to="/contact">Contact</Link>
-                    </ListGroup.Item>*/}
                     <ListGroup.Item>
                         <Link to="/login" className='text-decoration-none text-secondary coursor-pointer'>Login</Link>
                     </ListGroup.Item>

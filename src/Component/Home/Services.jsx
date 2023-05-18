@@ -85,7 +85,7 @@ const Services = () => {
                 {
                     services.map((item) => {
                         return (
-                            <Col lg={3} md={6} sm={12} className="my-1" key={item.id}>
+                            <Col lg={3} md={6} sm={12} className="my-3" key={item.id}>
                                 <Card>
                                     <CardActionArea>
                                         <CardMedia

@@ -69,31 +69,34 @@ const Navbar = () => {
                     </IconButton>
                 </div>
                 <ListGroup>
-                    {/* <ListGroup.Item>
-                        <Link to="/admin/about">About me</Link>
+                    <ListGroup.Item>
+                        <Link to="/admin/about" className='text-decoration-none text-secondary coursor-pointer'>About me</Link>
                     </ListGroup.Item>
                     <ListGroup.Item>
-                        <Link to="/admin/about">Account</Link>
+                        <Link to="/admin/account" className='text-decoration-none text-secondary coursor-pointer'>Account</Link>
                     </ListGroup.Item>
                     <ListGroup.Item>
-                        <Link to="/admin/blog">Blog</Link>
+                        <Link to="/admin/blog" className='text-decoration-none text-secondary coursor-pointer'>Blog</Link>
                     </ListGroup.Item>
                     <ListGroup.Item>
-                        <Link to="/admin/dashboard">Dashboard</Link>
+                        <Link to="/admin/dashboard" className='text-decoration-none text-secondary coursor-pointer'>Dashboard</Link>
                     </ListGroup.Item>
                     <ListGroup.Item>
-                        <Link to="/admin/myorder">My Orders</Link>
+                        <Link to="/admin/myorder" className='text-decoration-none text-secondary coursor-pointer'>My Orders</Link>
                     </ListGroup.Item>
                     <ListGroup.Item>
-                        <Link to="/admin/orders">Oders</Link>
+                        <Link to="/admin/orders" className='text-decoration-none text-secondary coursor-pointer'>Oders</Link>
                     </ListGroup.Item>
                     <ListGroup.Item>
-                        <Link to="/admin/services">Services</Link>
+                        <Link to="/admin/services" className='text-decoration-none text-secondary coursor-pointer'>Services</Link>
                     </ListGroup.Item> 
                     <ListGroup.Item>
-                        <Link to="/logout">Logout</Link>
-                    </ListGroup.Item>*/}
+                        <Link to="/logout" className='text-decoration-none text-secondary coursor-pointer'>Logout</Link>
+                    </ListGroup.Item>
                 </ListGroup>
+                <Divider />
+                <Divider />
+                <Divider />
                 <Divider />
                 <ListGroup>
                     <ListGroup.Item>

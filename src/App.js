@@ -1,11 +1,11 @@
 import React from "react";
-import Navbar from "./Component/Navbar/Navbar";
-import Footer from "./Component/Footer/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./Component/Home/Home";
-import Cart from "./Component/Home/Cart";
-import Login from "./Component/Home/Login";
-import Signup from "./Component/Home/Signup";
+import Footer from "./Component/FooterComponents/Footer";
+import Home from "./Component/HomeComponents/Home";
+import Cart from "./Component/HomeComponents/Cart";
+import Login from "./Component/HomeComponents/Login";
+import Signup from "./Component/HomeComponents/Signup";
+import Navbar from "./Component/NavbarComponents/Navbar";
 
 
 

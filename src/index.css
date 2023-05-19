@@ -18,7 +18,7 @@ code {
     monospace;
 }
 
-:focus{
+:focus {
   outline: none;
 }
 
@@ -52,7 +52,7 @@ p {
 section {
   padding: 30px 0;
   margin: 13px 0;
-  width: 100%;
+  max-width: 100%;
   margin: auto;
 }
 
@@ -76,10 +76,9 @@ section {
   -o-transform: translateY(-80px);
 }
 
-.about-img{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/*================================================ About section */
+.about-left {
+  padding: 20px;
 }
 
 .icon-row i {
@@ -105,15 +104,18 @@ section {
   -o-border-radius: 50%;
 }
 
-.icon-row i:hover{
+.icon-row i:hover {
   background: #fff;
   color: #3f51b5;
   border: 1px dotted #3f51b5;
 }
 
+/*================================================ services section */
 .rating {
   color: #3f51b5;
 }
+
+/*================================================ portfolio section */
 
 .portfolio-header ul {
   list-style: none;
@@ -138,20 +140,24 @@ section {
   cursor: pointer;
 }
 
+.portfolio-header ul li:hover {
+  background-color: #3f51b5;
+  color: #fff;
+}
+
+/*================================================ footer section */
+
 .footerbg {
   background-color: #3f51b5;
   text-align: center;
   padding: 40px 0 10px 0;
 }
 
-.message-box{
-  border : 1px dotted dark ;
+.message-box {
+  border: 1px dotted dark;
 }
 
-.portfolio-header ul li:hover {
-  background-color: #3f51b5;
-  color: #fff;
-}
+/*================================================ responsive section */
 
 @media (max-width:768px) {
 
@@ -193,5 +199,19 @@ section {
 
   .portfolio-header ul li {
     margin-top: 12px;
+  }
+}
+
+@media (max-width:990px) {
+  .about-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width:550px) {
+  .about-left {
+    padding: 0px;
   }
 }

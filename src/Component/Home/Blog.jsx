@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
+import { blogs } from '../../Data/Data';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -13,32 +14,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const blogs = [
-    {
-        name: "HTML5",
-        img: "https://res.cloudinary.com/image-hosting-api/image/upload/v1655629526/gpgoaf2uvzsxejjgckyn.png",
-        des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, a dolores nemo sit ipsam incidunt! Amet porro magnam rem veritatis repellendus officiis.",
-        details: "youtube.com"
-    },
-    {
-        name: "HTML5",
-        img: "https://res.cloudinary.com/image-hosting-api/image/upload/v1655629526/gpgoaf2uvzsxejjgckyn.png",
-        des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, a dolores nemo sit ipsam incidunt! Amet porro magnam rem veritatis repellendus officiis.",
-        details: "youtube.com"
-    },
-    {
-        name: "HTML5",
-        img: "https://res.cloudinary.com/image-hosting-api/image/upload/v1655629526/gpgoaf2uvzsxejjgckyn.png",
-        des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, a dolores nemo sit ipsam incidunt! Amet porro magnam rem veritatis repellendus officiis.",
-        details: "youtube.com"
-    },
-    {
-        name: "HTML5",
-        img: "https://res.cloudinary.com/image-hosting-api/image/upload/v1655629526/gpgoaf2uvzsxejjgckyn.png",
-        des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, a dolores nemo sit ipsam incidunt! Amet porro magnam rem veritatis repellendus officiis.",
-        details: "youtube.com"
-    },
-]
+
 
 const Blog = () => {
 
@@ -58,7 +34,7 @@ const Blog = () => {
                     blogs.map((blog) => {
                         return (
 
-                            <Col lg={3} md={6} sm={12}>
+                            <Col lg={3} md={6} sm={12} key={blog.id}>
                                 <Card key={blog.img}>
                                     <Card.Img variant="top" src={blog.img} className='w-100 d-block' />
                                     <Card.Body>

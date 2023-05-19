@@ -9,7 +9,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Rating from './Rating';
-
+import { services } from '../../Data/Data';
 
 const useStyles = makeStyles({
     // root: {
@@ -19,54 +19,6 @@ const useStyles = makeStyles({
         height: 140,
     },
 });
-
-
-const services = [
-    {
-        id: "1",
-        name: "Javascript",
-        category: "programming",
-        stock: "2",
-        des: "here is your description",
-        qty: 1,
-        rating: 2.3,
-        price: 30,
-        img: "https://res.cloudinary.com/image-hosting-api/image/upload/v1655629606/m6c3q28owfvplawnaoqv.jpg"
-    },
-    {
-        id: "2",
-        name: "Javascript",
-        category: "programming",
-        stock: "2",
-        des: "here is your description",
-        qty: 1,
-        rating: 4.5,
-        price: 30,
-        img: "https://res.cloudinary.com/image-hosting-api/image/upload/v1655629526/gpgoaf2uvzsxejjgckyn.png"
-    },
-    {
-        id: "3",
-        name: "Javascript",
-        category: "programming",
-        stock: "2",
-        des: "here is your description",
-        qty: 1,
-        rating: 2.3,
-        price: 30,
-        img: "https://res.cloudinary.com/image-hosting-api/image/upload/v1655629391/xwhmcoqovgtobzyep0zq.png"
-    },
-    {
-        id: "4",
-        name: "Javascript",
-        category: "programming",
-        stock: "2",
-        des: "here is your description",
-        qty: 1,
-        rating: 4.3,
-        price: 30,
-        img: "https://res.cloudinary.com/image-hosting-api/image/upload/v1655629213/j9f3jrtgm6lp2pjzdmf1.png"
-    },
-]
 
 const Services = () => {
 

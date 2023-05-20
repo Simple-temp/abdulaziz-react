@@ -70,7 +70,7 @@ const Navbar = () => {
                 </div>
                 <ListGroup>
                     <ListGroup.Item>
-                        <Link to="/admin/about" className='text-decoration-none text-secondary coursor-pointer'>About me</Link>
+                        <Link to="/admin/aboutme" className='text-decoration-none text-secondary coursor-pointer'>About me</Link>
                     </ListGroup.Item>
                     <ListGroup.Item>
                         <Link to="/admin/account" className='text-decoration-none text-secondary coursor-pointer'>Account</Link>

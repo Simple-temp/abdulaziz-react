@@ -91,6 +91,9 @@ const Navbar = () => {
                         <Link to="/admin/services" className='text-decoration-none text-secondary coursor-pointer'>Services</Link>
                     </ListGroup.Item> 
                     <ListGroup.Item>
+                        <Link to="/admin/portfolio" className='text-decoration-none text-secondary coursor-pointer'>Portfolio</Link>
+                    </ListGroup.Item> 
+                    <ListGroup.Item>
                         <Link to="/logout" className='text-decoration-none text-secondary coursor-pointer'>Logout</Link>
                     </ListGroup.Item>
                 </ListGroup>

@@ -13,6 +13,9 @@ import AdminDashBoard from "./Component/AdminComponents/AdminDashBoard";
 import AdminAllOrders from "./Component/AdminComponents/AdminAllOrders";
 import AdminMyOrder from "./Component/AdminComponents/AdminMyOrder";
 import AdminServices from "./Component/AdminComponents/AdminServices";
+import AdminPortfolio from "./Component/AdminComponents/AdminPortfolio";
+import AdminBlogById from "./Component/AdminComponents/AdminBlogById";
+import AdminServicesById from "./Component/AdminComponents/AdminServicesById";
 
 
 
@@ -38,10 +41,13 @@ function App() {
             <Route path="/admin/aboutme" element={<AdminAboutScreen/>}/>
             <Route path="/admin/account" element={<AdminAccount/>}/>
             <Route path="/admin/blog" element={<AdminBLog/>}/>
+            <Route path="/admin/blog/:id" element={<AdminBlogById/>}/>
             <Route path="/admin/dashboard" element={<AdminDashBoard/>}/>
             <Route path="/admin/myorder" element={<AdminMyOrder/>}/>
             <Route path="/admin/orders" element={<AdminAllOrders/>}/>
             <Route path="/admin/services" element={<AdminServices/>}/>
+            <Route path="/admin/services/:id" element={<AdminServicesById/>}/>
+            <Route path="/admin/portfolio" element={<AdminPortfolio/>}/>
           </Routes>
         </main>
         <footer>

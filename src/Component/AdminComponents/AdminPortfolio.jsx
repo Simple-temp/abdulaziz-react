@@ -1,31 +1,23 @@
 import React, { useState } from 'react';
-import { Col, Row } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import TextField from '@material-ui/core/TextField';
-import { Divider } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import { Divider, TextField } from '@material-ui/core';
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        '& > *': {
-            margin: theme.spacing(1),
-            width: '25ch',
-        },
-    },
+const useStyles = makeStyles({
     media: {
         height: 140,
     },
-}));
+});
 
-
-const AdminServices = () => {
+const AdminPortfolio = () => {
 
     const classes = useStyles();
     const [formData, setFormData] = useState({})
@@ -44,7 +36,7 @@ const AdminServices = () => {
 
     return (
         <div className='mt-5 pt-5 container'>
-            <h1 className='text-center mt-3 mb-5'>Admin Services</h1>
+            <h1 className='text-center mt-3 mb-5'>Admin Portfolio</h1>
             <Row>
                 <Col lg={6} md={6} sm={12}>
                     <form className={classes.root} noValidate autoComplete="off">
@@ -69,8 +61,8 @@ const AdminServices = () => {
                         />
 
                         <TextField
-                            name="stock"
-                            label="Stock"
+                            name="live"
+                            label="Live"
                             id="outlined-basic"
                             type='text'
                             variant="outlined"
@@ -89,8 +81,8 @@ const AdminServices = () => {
                         />
 
                         <TextField
-                            name="qty"
-                            label="Quantity"
+                            name="fontCode"
+                            label="FontCode"
                             id="outlined-basic"
                             type='text'
                             variant="outlined"
@@ -99,18 +91,8 @@ const AdminServices = () => {
                         />
 
                         <TextField
-                            name="rating"
-                            label="Rating"
-                            id="outlined-basic"
-                            type='text'
-                            variant="outlined"
-                            className='w-100 mb-3'
-                            onBlur={handleChange}
-                        />
-
-                        <TextField
-                            name="price"
-                            label="Price"
+                            name="backCode"
+                            label="BackCode"
                             id="outlined-basic"
                             type='text'
                             variant="outlined"
@@ -144,8 +126,7 @@ const AdminServices = () => {
                     </div>
                 </Col>
                 <Col lg={6} md={6} sm={12}>
-                    <p className='text-center mb-3'>Services preview</p>
-                    <Card>
+                    <Card className='pb-3 mb-3'>
                         <CardActionArea>
                             <CardMedia
                                 className={`${classes.media} img-fluid w-100 d-block`}
@@ -157,26 +138,35 @@ const AdminServices = () => {
                                     Javascript
                                 </Typography>
                                 <Typography variant="body2" color="textSecondary" component="p">
-                                    here is your description
+                                    des
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
                         <CardActions>
                             <Button size="small" color="primary">
-                                $30
+                                <Link to="#" className='text-decoration-none'>
+                                    Frontend
+                                </Link>
                             </Button>
                             <Button size="small" color="primary">
-                                4.5
-                            </Button>
-                            <Link to={`/admin/services/3`} className='text-decoration-none text-white ms-2'>
-                                <Button variant="contained" color="secondary" className='mt-2'>
-                                    Edit
-                                </Button>
-                            </Link>
-                            <Button variant="contained" color="default" className='mt-2 ms-3'>
-                                Delete
+                                <Link to="#" className='text-decoration-none'>
+                                    Backend
+                                </Link>
                             </Button>
                         </CardActions>
+                        <Button size="small" color="primary">
+                            <Link to="#" className='text-decoration-none'>
+                                Live!
+                            </Link>
+                        </Button>
+                        <Link to="/" className='text-decoration-none text-white ms-2'>
+                            <Button variant="contained" color="secondary" className='mt-2'>
+                                Edit
+                            </Button>
+                        </Link>
+                        <Button variant="contained" color="default" className='mt-2 ms-3'>
+                            Delete
+                        </Button>
                     </Card>
                 </Col>
             </Row>
@@ -184,4 +174,4 @@ const AdminServices = () => {
     );
 };
 
-export default AdminServices;
+export default AdminPortfolio;

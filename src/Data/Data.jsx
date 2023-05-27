@@ -78,91 +78,84 @@ export const portfolio = [
     {
         id: 1,
         name: "Javascript",
+        category: "mern",
+        des: "here is your description",
+        img: "https://res.cloudinary.com/image-hosting-api/image/upload/v1655629606/m6c3q28owfvplawnaoqv.jpg",
+        live : "@example.com",
+        fontCode : "frontcode.com",
+        backCode : "backcode.com"
+    },
+    {
+        id: 1,
+        name: "Javascript",
         category: "crud",
-        stock: "2",
         des: "here is your description",
-        qty: 1,
-        rating: 4.3,
-        price: 30,
-        img: "https://res.cloudinary.com/image-hosting-api/image/upload/v1655629606/m6c3q28owfvplawnaoqv.jpg"
+        img: "https://res.cloudinary.com/image-hosting-api/image/upload/v1655629606/m6c3q28owfvplawnaoqv.jpg",
+        live : "@example.com",
+        fontCode : "frontcode.com",
+        backCode : "backcode.com"
     },
     {
-        id: 2,
+        id: 1,
         name: "Javascript",
-        category: "mern",
-        stock: "2",
+        category: "crud",
         des: "here is your description",
-        qty: 1,
-        rating: 4.5,
-        price: 30,
-        img: "https://res.cloudinary.com/image-hosting-api/image/upload/v1655629606/m6c3q28owfvplawnaoqv.jpg"
+        img: "https://res.cloudinary.com/image-hosting-api/image/upload/v1655629606/m6c3q28owfvplawnaoqv.jpg",
+        live : "@example.com",
+        fontCode : "frontcode.com",
+        backCode : "backcode.com"
     },
     {
-        id: 3,
+        id: 1,
         name: "Javascript",
-        category: "mern",
-        stock: "2",
+        category: "chat",
         des: "here is your description",
-        qty: 1,
-        rating: 3,
-        price: 30,
-        img: "https://res.cloudinary.com/image-hosting-api/image/upload/v1655629606/m6c3q28owfvplawnaoqv.jpg"
+        img: "https://res.cloudinary.com/image-hosting-api/image/upload/v1655629606/m6c3q28owfvplawnaoqv.jpg",
+        live : "@example.com",
+        fontCode : "frontcode.com",
+        backCode : "backcode.com"
     },
     {
-        id: 4,
+        id: 1,
         name: "Javascript",
         category: "app",
-        stock: "2",
         des: "here is your description",
-        qty: 1,
-        rating: 4.5,
-        price: 30,
-        img: "https://res.cloudinary.com/image-hosting-api/image/upload/v1655629606/m6c3q28owfvplawnaoqv.jpg"
+        img: "https://res.cloudinary.com/image-hosting-api/image/upload/v1655629606/m6c3q28owfvplawnaoqv.jpg",
+        live : "@example.com",
+        fontCode : "frontcode.com",
+        backCode : "backcode.com"
     },
     {
-        id: 5,
-        name: "Javascript",
-        category: "chat",
-        stock: "2",
-        des: "here is your description",
-        qty: 1,
-        rating: 4.5,
-        price: 30,
-        img: "https://res.cloudinary.com/image-hosting-api/image/upload/v1655629606/m6c3q28owfvplawnaoqv.jpg"
-    },
-    {
-        id: 6,
-        name: "Javascript",
-        category: "chat",
-        stock: "2",
-        des: "here is your description",
-        qty: 1,
-        rating: 5,
-        price: 30,
-        img: "https://res.cloudinary.com/image-hosting-api/image/upload/v1655629606/m6c3q28owfvplawnaoqv.jpg"
-    },
-    {
-        id: 7,
-        name: "Javascript",
-        category: "crud",
-        stock: "2",
-        des: "here is your description",
-        qty: 1,
-        rating: 2.5,
-        price: 30,
-        img: "https://res.cloudinary.com/image-hosting-api/image/upload/v1655629606/m6c3q28owfvplawnaoqv.jpg"
-    },
-    {
-        id: 8,
+        id: 1,
         name: "Javascript",
         category: "mern",
-        stock: "2",
         des: "here is your description",
-        qty: 1,
-        rating: 4.5,
-        price: 30,
-        img: "https://res.cloudinary.com/image-hosting-api/image/upload/v1655629606/m6c3q28owfvplawnaoqv.jpg"
+        img: "https://res.cloudinary.com/image-hosting-api/image/upload/v1655629606/m6c3q28owfvplawnaoqv.jpg",
+        live : "@example.com",
+        fontCode : "frontcode.com",
+        backCode : "backcode.com"
     },
+    {
+        id: 1,
+        name: "Javascript",
+        category: "chat",
+        des: "here is your description",
+        img: "https://res.cloudinary.com/image-hosting-api/image/upload/v1655629606/m6c3q28owfvplawnaoqv.jpg",
+        live : "@example.com",
+        fontCode : "frontcode.com",
+        backCode : "backcode.com"
+    },
+    {
+        id: 1,
+        name: "Javascript",
+        category: "app",
+        des: "here is your description",
+        img: "https://res.cloudinary.com/image-hosting-api/image/upload/v1655629606/m6c3q28owfvplawnaoqv.jpg",
+        live : "@example.com",
+        fontCode : "frontcode.com",
+        backCode : "backcode.com"
+    },
+
 ]
 
 // =========================================================== blog 
@@ -177,7 +170,7 @@ export const blogs = [
     },
     {
         id : 2,
-        name: "HTML5",
+        name: "CSS3",
         img: "https://res.cloudinary.com/image-hosting-api/image/upload/v1655629526/gpgoaf2uvzsxejjgckyn.png",
         des: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, a dolores nemo sit ipsam incidunt! Amet porro magnam rem veritatis repellendus officiis.",
         details: "youtube.com"

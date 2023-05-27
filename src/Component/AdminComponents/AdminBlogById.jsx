@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Col, Row, Card } from 'react-bootstrap';
+import { Col, Row, Card, Badge } from 'react-bootstrap';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { Divider } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { blogs } from '../../Data/Data';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -15,10 +16,14 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const AdminBLog = () => {
+const AdminBlogById = () => {
 
+    const { id } = useParams()
     const classes = useStyles();
     const [formData, setFormData] = useState({})
+    const [info, setInfo] = useState(blogs)
+
+    const found = info.find((item) => item.id == id)
 
     const handleChange = (e) => {
         setFormData({
@@ -34,9 +39,10 @@ const AdminBLog = () => {
 
     return (
         <div className='mt-5 pt-5 container'>
-            <h1 className='text-center mt-3 mb-5'>Blogs</h1>
+            <h1 className='text-center mt-3 mb-5'>Blog Edit</h1>
             <Row>
-                <Col lg={6} md={6} sm={12}>
+                <Col lg={8} md={12} className='mx-auto'>
+                    <Badge bg="primary" className='my-3 p-2 ms-2'>Blog Name : {found.name}</Badge>
                     <form className={classes.root} noValidate autoComplete="off">
                         <TextField
                             name="name"
@@ -89,42 +95,13 @@ const AdminBLog = () => {
                             className='mt-3 mb-5'
                             onClick={handleSubmit}
                         >
-                            Add
+                            Update
                         </Button>
                     </div>
-                </Col>
-                <Col lg={6} md={6} sm={12}>
-                    <p className='text-center mb-3'>Blog preview</p>
-                    <Row>
-                        <Col lg={12} className='mb-3'>
-                            <Card>
-                                <Card.Img variant="top" src="https://res.cloudinary.com/image-hosting-api/image/upload/v1655629526/gpgoaf2uvzsxejjgckyn.png" className='w-100 d-block' />
-                                <Card.Body>
-                                    <Card.Title>HTML5</Card.Title>
-                                    <Card.Text className='my-2'>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, a dolores nemo sit ipsam incidunt! Amet porro magnam rem veritatis repellendus officiis.
-                                    </Card.Text>
-                                    <Link to="/" className='text-decoration-none text-white'>
-                                        <Button variant="contained" color="primary" className='mt-2'>
-                                            Details
-                                        </Button>
-                                    </Link>
-                                    <Link to={`/admin/blog/2`} className='text-decoration-none text-white ms-2'>
-                                        <Button variant="contained" color="secondary" className='mt-2'>
-                                            Edit
-                                        </Button>
-                                    </Link>
-                                    <Button variant="contained" color="default" className='mt-2 ms-3'>
-                                        Delete
-                                    </Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    </Row>
                 </Col>
             </Row>
         </div>
     );
 };
 
-export default AdminBLog;
+export default AdminBlogById;

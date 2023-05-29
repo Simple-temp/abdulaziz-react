@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Badge, Col, Row } from 'react-bootstrap';
-import { services } from '../../Data/Data';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import { Col, Row } from 'react-bootstrap';
 import { Divider } from '@material-ui/core';
-import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -14,19 +13,13 @@ const useStyles = makeStyles((theme) => ({
             width: '25ch',
         },
     },
-    media: {
-        height: 140,
-    },
 }));
 
-const AdminServicesById = () => {
 
-    const { id } = useParams()
+const Shipping = () => {
+
     const classes = useStyles();
     const [formData, setFormData] = useState({})
-    const [info, setInfo] = useState(services)
-
-    const found = info.find((item) => item.id == id)
 
     const handleChange = (e) => {
         setFormData({
@@ -35,17 +28,17 @@ const AdminServicesById = () => {
         })
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault(e)
-        console.log(formData)
-    }
+    // const handleSubmit = (e) => {
+    //     e.preventDefault(e)
+    //     console.log(formData)
+    // }
+
 
     return (
         <div className='mt-5 pt-5 container'>
-            <h1 className='text-center mt-3 mb-5'>Services Edit</h1>
+            <h1 className='text-center mt-3 mb-5'>Shipping</h1>
             <Row>
-                <Col lg={8} md={12} className='mx-auto'>
-                    <Badge bg="primary" className='my-3 p-2 ms-2'>Services Name : {found.name}</Badge>
+                <Col lg={8} md={8} sm={12} className='mx-auto'>
                     <form className={classes.root} noValidate autoComplete="off">
                         <TextField
                             name="name"
@@ -55,91 +48,63 @@ const AdminServicesById = () => {
                             variant="outlined"
                             className='w-100 mb-3'
                             onBlur={handleChange}
+                            required
                         />
 
                         <TextField
-                            name="category"
-                            label="Category"
+                            name="address"
                             id="outlined-basic"
+                            label="Address"
                             type='text'
                             variant="outlined"
                             className='w-100 mb-3'
                             onBlur={handleChange}
+                            required
                         />
 
                         <TextField
-                            name="stock"
-                            label="Stock"
+                            name="distric"
                             id="outlined-basic"
+                            label="Distric"
                             type='text'
                             variant="outlined"
                             className='w-100 mb-3'
                             onBlur={handleChange}
+                            required
                         />
 
                         <TextField
-                            name="des"
-                            label="Description"
+                            name="postalCode"
                             id="outlined-basic"
+                            label="Postal Code"
                             type='text'
                             variant="outlined"
                             className='w-100 mb-3'
                             onBlur={handleChange}
+                            required
                         />
 
                         <TextField
-                            name="qty"
-                            label="Quantity"
+                            name="number"
                             id="outlined-basic"
+                            label="Number"
                             type='text'
                             variant="outlined"
                             className='w-100 mb-3'
                             onBlur={handleChange}
-                        />
-
-                        <TextField
-                            name="rating"
-                            label="Rating"
-                            id="outlined-basic"
-                            type='text'
-                            variant="outlined"
-                            className='w-100 mb-3'
-                            onBlur={handleChange}
-                        />
-
-                        <TextField
-                            name="price"
-                            label="Price"
-                            id="outlined-basic"
-                            type='text'
-                            variant="outlined"
-                            className='w-100 mb-3'
-                            onBlur={handleChange}
-                        />
-
-                        <TextField
-                            name="img"
-                            id="outlined-basic"
-                            type='file'
-                            variant="outlined"
-                            className='w-100 mb-3'
-                            onBlur={handleChange}
+                            required
                         />
                     </form>
-
                     <Divider />
                     <Divider />
                     <Divider />
                     <Divider />
                     <div className={classes.root}>
-                        <Button
-                            variant="contained"
-                            color="primary"
-                            className='mt-3 mb-5'
-                            onClick={handleSubmit}
-                        >
-                            Update
-                        </Button>
+                        <Link to={`/payment`} className='text-decoration-none text-white ms-2'>
+                            <Button variant="contained" color="secondary" className='mt-2 mb-3 mx-auto d-flex'>
+                                Go to Payment
+                            </Button>
+                        </Link>
                     </div>
                 </Col>
             </Row>
@@ -147,4 +112,4 @@ const AdminServicesById = () => {
     );
 };
 
-export default AdminServicesById;
+export default Shipping;

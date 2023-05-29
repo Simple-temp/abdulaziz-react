@@ -86,7 +86,7 @@ export const portfolio = [
         backCode : "backcode.com"
     },
     {
-        id: 1,
+        id: 2,
         name: "Javascript",
         category: "crud",
         des: "here is your description",
@@ -96,7 +96,7 @@ export const portfolio = [
         backCode : "backcode.com"
     },
     {
-        id: 1,
+        id: 3,
         name: "Javascript",
         category: "crud",
         des: "here is your description",
@@ -106,7 +106,7 @@ export const portfolio = [
         backCode : "backcode.com"
     },
     {
-        id: 1,
+        id: 4,
         name: "Javascript",
         category: "chat",
         des: "here is your description",
@@ -116,7 +116,7 @@ export const portfolio = [
         backCode : "backcode.com"
     },
     {
-        id: 1,
+        id: 5,
         name: "Javascript",
         category: "app",
         des: "here is your description",
@@ -126,7 +126,7 @@ export const portfolio = [
         backCode : "backcode.com"
     },
     {
-        id: 1,
+        id: 6,
         name: "Javascript",
         category: "mern",
         des: "here is your description",
@@ -136,7 +136,7 @@ export const portfolio = [
         backCode : "backcode.com"
     },
     {
-        id: 1,
+        id: 7,
         name: "Javascript",
         category: "chat",
         des: "here is your description",
@@ -146,7 +146,7 @@ export const portfolio = [
         backCode : "backcode.com"
     },
     {
-        id: 1,
+        id: 8,
         name: "Javascript",
         category: "app",
         des: "here is your description",

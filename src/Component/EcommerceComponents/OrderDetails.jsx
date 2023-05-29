@@ -1,15 +1,11 @@
 import React from 'react';
-import { Alert, Col, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import Card from '@material-ui/core/Card';
+import { Col, Row } from 'react-bootstrap';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
-import { Divider } from '@material-ui/core';
+import { Button, Card, Divider, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -23,22 +19,42 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const Cart = () => {
+
+const OrderDetails = () => {
 
     const classes = useStyles();
 
     return (
         <div className='mt-5 pt-5 container'>
-            <h1 className='text-center mt-3 mb-5'>Cart</h1>
+            <h1 className='text-center mt-3 mb-5'>Order Details</h1>
             <Row>
                 <Col lg={8} md={6} sm={12}>
-                    <Alert variant="primary">
-                        This is cart page
-                        <Link to="/" className='ms-2'>Back to home</Link>
-                    </Alert>
+                    <h2>Order Id : </h2>
                     <Row>
-                        <Col lg={12} sm={12} className='my-2'>
-                            <Card className='p-2'>
+                        <Col lg={12}>
+                            <Card className='p-2 my-2'>
+                                <h4>Address : </h4>
+                                <p>Address : </p>
+                                <p>Distric : </p>
+                                <p>Postal Code : </p>
+                                <p>Number : </p>
+                                <p>Emaple </p>
+                            </Card>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col lg={12}>
+                            <Card className='p-2 my-2'>
+                                <h4>Payment Method : </h4>
+                                <p>Stripe : </p>
+                                <p>Paypal : </p>
+                            </Card>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col lg={12}>
+                            <Card className='p-2 my-2'>
+                                <h4>Items : </h4>
                                 <Row>
                                     <Col lg={4} md={6} sm={12}>
                                         <CardActionArea>
@@ -72,9 +88,6 @@ const Cart = () => {
                                             Price : $30
                                         </Typography>
                                     </Col>
-                                    <Button variant="contained" color="default" className=''>
-                                        Delete
-                                    </Button>
                                 </Row>
                             </Card>
                         </Col>
@@ -82,13 +95,6 @@ const Cart = () => {
                 </Col>
                 <Col lg={4} md={6} sm={12}>
                     <Card>
-                        <CardActionArea className='text-center'>
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="h2">
-                                    Price
-                                </Typography>
-                            </CardContent>
-                        </CardActionArea>
                         <div className="cart-price ms-2">
                             <Typography gutterBottom variant="h5" component="h2">
                                 Total Item : 3
@@ -126,11 +132,6 @@ const Cart = () => {
                             <Divider />
                             <Divider />
                         </div>
-                        <Link to={`/shipping`} className='text-decoration-none text-white ms-2'>
-                            <Button variant="contained" color="secondary" className='mt-2 mb-3 mx-auto d-flex'>
-                                Go to Shipping
-                            </Button>
-                        </Link>
                     </Card>
                 </Col>
             </Row>
@@ -138,4 +139,4 @@ const Cart = () => {
     );
 };
 
-export default Cart;
+export default OrderDetails;

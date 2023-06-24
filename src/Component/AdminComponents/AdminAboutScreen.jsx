@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Col, Row } from 'react-bootstrap';
+import { Badge, Col, Row } from 'react-bootstrap';
 import { makeStyles, } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { Divider } from '@material-ui/core';
 import { useMutation, useQuery } from '@apollo/client';
 import { GET_ABOUT, GET_ICON } from '../../Graphql/AllQuery/About';
-import { CREATE_ABOUT, CREATE_ICON } from '../../Graphql/AllMutation/AboutMutation';
+import { CREATE_ABOUT, CREATE_ICON, DELETE_ICON } from '../../Graphql/AllMutation/AboutMutation';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -27,6 +27,7 @@ const AdminAboutScreen = () => {
     const { loading: loadingIcon, error: loadingError, data: IconData } = useQuery(GET_ICON)
     const [New_Icon] = useMutation(CREATE_ICON)
     const [New_About] = useMutation(CREATE_ABOUT)
+    const [Delete_Icon] = useMutation(DELETE_ICON)
 
     const [formData, setFormData] = useState({ name: '', file: null, des1: '', des2: '', title: '' })
     const [iconData, setIconData] = useState({})
@@ -69,8 +70,6 @@ const AdminAboutScreen = () => {
                 }
             })
 
-            setFormData({ name: '', file: null, des1: '', des2: '', title: '' })
-
         } catch (error) {
             console.error(error);
         }
@@ -81,13 +80,21 @@ const AdminAboutScreen = () => {
     const handleChangeIcon = (e) => { setIconData({ ...iconData, [e.target.name]: e.target.value }) }
 
     const handleSubmitIcon = async (e) => {
-        e.preventDefault(e)
         New_Icon({
             variables: {
                 createIcon: { ...iconData }
             }
         })
-        console.log(iconData)
+        window.location.reload();
+    }
+
+    const handleDeleteIcon = (id) =>{
+        Delete_Icon({
+            variables : {
+                id : id
+            }
+        })
+        window.location.reload();
     }
 
     return (
@@ -117,9 +124,9 @@ const AdminAboutScreen = () => {
                     </div>
                     {/* ========================================================================================here icon field */}
                     <form className={classes.root} noValidate autoComplete="off">
-                        <TextField name="name" id="outlined-basic" label="Icon URL" type="text" variant="outlined" className='w-100 mb-3' onBlur={handleChangeIcon} />
+                        <TextField name="name" id="outlined-basic" label="Icon className" type="text" variant="outlined" className='w-100 mb-3' onBlur={handleChangeIcon} />
 
-                        <TextField name="iconLink" label="Icon Link" id="outlined-basic" type='text' variant="outlined" className='w-100 mb-3' onBlur={handleChangeIcon} />
+                        <TextField name="iconLink" label="@example.com" id="outlined-basic" type='text' variant="outlined" className='w-100 mb-3' onBlur={handleChangeIcon} />
                     </form>
                     <Divider />
                     <Divider />
@@ -161,7 +168,7 @@ const AdminAboutScreen = () => {
                         <Divider />
                         <Divider />
                         <Divider />
-                        <Row className='icon-row mt-3 mb-3'>
+                        <Row className='mt-3 mb-3'>
                             <div className='d-flex'>
                                 {
                                     loadingIcon ? <p>loading..</p>
@@ -169,7 +176,10 @@ const AdminAboutScreen = () => {
                                             : IconData.SocailIcon.map((singleIcon) => {
                                                 return (
                                                     <div key={singleIcon._id}>
-                                                        <i className={singleIcon.name}></i>
+                                                        <div className='icon-row'>
+                                                            <i className={singleIcon.name}></i>
+                                                        </div>
+                                                        <i className="fa-solid fa-skull-crossbones cross" onClick={()=>handleDeleteIcon(singleIcon._id)}></i>
                                                     </div>
                                                 )
                                             })

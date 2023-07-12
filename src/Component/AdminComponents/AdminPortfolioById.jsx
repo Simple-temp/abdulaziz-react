@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Badge, Col, Row } from 'react-bootstrap';
-import { portfolio } from '../../Data/Data';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { Divider } from '@material-ui/core';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { GET_PORTFOLIO_BY_ID } from '../../Graphql/AllQuery/Portfolio';
 import { useQuery } from "@apollo/client";
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -24,8 +24,9 @@ const useStyles = makeStyles((theme) => ({
 const AdminPortfolioById = () => {
 
     const { id } = useParams()
+    const navigate = useNavigate()
     const classes = useStyles();
-    const [formData, setFormData] = useState({})
+    const [formData, setFormData] = useState({ name : "", category : "", live : "", des : "", fontCode : "", backCode : "", img : null, })
     const { loading, error, data } = useQuery(GET_PORTFOLIO_BY_ID,{
         variables : {
             portfolioid : id
@@ -41,9 +42,26 @@ const AdminPortfolioById = () => {
         })
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault(e)
-        console.log(formData)
+    const handleSubmit = async (e) => {
+        // e.preventDefault(e)
+        const inputData = new FormData()
+        inputData.append("name", formData.name)
+        inputData.append("category", formData.category)
+        inputData.append("live", formData.live)
+        inputData.append("des", formData.des)
+        inputData.append("fontCode", formData.fontCode)
+        inputData.append("backCode", formData.backCode)
+        inputData.append("img", formData.img)
+
+        try {
+            const response = await axios.put('http://localhost:5000/api/portfolio/updateportfolio/'+id,
+                inputData,
+                navigate("/admin/portfolio")
+            );
+            window.location.reload();
+        } catch (error) {
+            console.error(error);
+        }
     }
 
     return (
@@ -52,7 +70,7 @@ const AdminPortfolioById = () => {
             <Row>
                 <Col lg={8} md={12} className='mx-auto'>
                     <Badge bg="primary" className='my-3 p-2 ms-2'>Portfolio Name : {loading ? "loading" : error ? "error" : data.portfolioById.name}</Badge>
-                    <form className={classes.root} noValidate autoComplete="off">
+                    <form className={classes.root} noValidate autoComplete="on">
                         {[
                             { name: "name", label: "Name", type: "text" },
                             { name: "category", label: "Category", type: "text" },

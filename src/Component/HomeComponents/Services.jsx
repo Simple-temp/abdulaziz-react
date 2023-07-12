@@ -9,8 +9,9 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Rating from './Rating';
-import { services } from '../../Data/Data';
-
+import { GET_SERVICES } from '../../Graphql/AllQuery/Services';
+import { useQuery } from "@apollo/client"
+ 
 const useStyles = makeStyles({
     // root: {
     //     maxWidth: 345,
@@ -23,6 +24,7 @@ const useStyles = makeStyles({
 const Services = () => {
 
     const classes = useStyles();
+    const { loading,  error, data } = useQuery(GET_SERVICES)
 
     return (
         <section>
@@ -35,7 +37,9 @@ const Services = () => {
             <Row className='section-content'>
                 <h1 className='text-center mt-3 mb-5'>Services</h1>
                 {
-                    services.map((item) => {
+                    loading ? <p>Loading..</p>
+                    : error ? <p>{error.message}</p>
+                    : data.services.map((item) => {
                         return (
                             <Col lg={3} md={6} sm={12} className="my-3" key={item.id}>
                                 <Card>

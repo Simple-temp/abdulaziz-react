@@ -2,8 +2,9 @@ import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import { about, socialIcons } from '../../Data/Data';
 import { Link } from 'react-router-dom';
+import { GET_ABOUT, GET_ICON } from '../../Graphql/AllQuery/About';
+import { useQuery } from "@apollo/client"
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -17,6 +18,8 @@ const useStyles = makeStyles((theme) => ({
 const AboutMe = () => {
 
     const classes = useStyles();
+    const { loading: aboutloading, error: abouterror, data: aboutdata } = useQuery(GET_ABOUT)
+    const { loading: iconloading, error: iconerror, data: icondata } = useQuery(GET_ICON)
 
     return (
         <section className='pt-2'>
@@ -29,29 +32,51 @@ const AboutMe = () => {
             <Row className='section-content'>
                 <h1 className='text-center mt-3 mb-5'>About Me</h1>
                 <Col lg={6} md={6} sm={12} className='my-1 about-img'>
-                    <img src={about.img} alt="" className='img-fluid w-100' />
+                    {
+                        aboutloading ? <p>loading..</p>
+                            : abouterror ? <p>{abouterror.message}</p>
+                                : <img
+                                    src={aboutdata.about[0].file}
+                                    alt="this is about image"
+                                    className='img-fluid w-100'
+                                />
+                    }
                 </Col>
                 <Col lg={6} md={6} sm={12} className='my-1 about-left'>
                     <Row>
-                        <div className="about-me mb-2">
-                            <h1>{about.name}</h1>
-                            <h4>{about.title}</h4>
-                        </div>
+                        {
+                            aboutloading ? <p>loading..</p>
+                                : abouterror ? <p>{abouterror.message}</p>
+                                    : <div className="about-me mb-2">
+                                        <h1>{aboutdata.about[0].name}</h1>
+                                        <h4>{aboutdata.about[0].title}</h4>
+                                    </div>
+                        }
                     </Row>
                     <Row className='my-3'>
-                        <p>{about.des1}</p>
+                        {
+                            aboutloading ? <p>loading..</p>
+                                : abouterror ? <p>{abouterror.message}</p>
+                                    : <p>{aboutdata.about[0].des1}</p>
+                        }
                     </Row>
                     <Row>
-                        <p>{about.des2}</p>
+                        {
+                            aboutloading ? <p>loading..</p>
+                                : abouterror ? <p>{abouterror.message}</p>
+                                    : <p>{aboutdata.about[0].des2}</p>
+                        }
                     </Row>
                     <Row className='icon-row mt-3'>
                         <div className='d-flex'>
                             {
-                                socialIcons.map((singleIcon) => {
-                                    return (
-                                        <i className={singleIcon.name} key={singleIcon.iconLink}></i>
-                                    )
-                                })
+                                iconloading ? <p>Loading..</p>
+                                    : iconerror ? <p>{iconerror.message}</p>
+                                        : icondata.SocailIcon.map((singleIcon) => {
+                                            return (
+                                                <i className={singleIcon.name} key={singleIcon.iconLink}></i>
+                                            )
+                                        })
                             }
                         </div>
                     </Row>

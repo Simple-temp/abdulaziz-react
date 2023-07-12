@@ -11,6 +11,8 @@ import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
 import { portfolio } from '../../Data/Data';
 import Isotope from 'isotope-layout';
+import { useQuery } from '@apollo/client';
+import { GET_PORTFOLIO } from '../../Graphql/AllQuery/Portfolio';
 
 const useStyles = makeStyles({
     // root: {
@@ -23,6 +25,8 @@ const useStyles = makeStyles({
 
 
 const Portfolio = () => {
+
+    const { loading, error, data } = useQuery(GET_PORTFOLIO)
 
     const isotope = React.useRef()
 

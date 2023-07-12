@@ -4,7 +4,8 @@ import Card from 'react-bootstrap/Card';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
-import { blogs } from '../../Data/Data';
+import { GET_BLOG } from '../../Graphql/AllQuery/Blog';
+import { useQuery } from "@apollo/client"
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -19,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
 const Blog = () => {
 
     const classes = useStyles();
+    const { loading , error, data } = useQuery(GET_BLOG)
 
     return (
         <section>
@@ -31,7 +33,9 @@ const Blog = () => {
             <Row className='section-content'>
                 <h1 className='text-center mt-3 mb-5'>Blog</h1>
                 {
-                    blogs.map((blog) => {
+                    loading ? <p>Loading..</p>
+                    : error ? <p>{error.message}</p>
+                    : data.blog.map((blog) => {
                         return (
 
                             <Col lg={3} md={6} sm={12} key={blog.id}>
